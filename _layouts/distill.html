@@ -1,0 +1,31 @@
+<!doctype html>
+<meta charset="utf-8">
+<script src="https://distill.pub/template.v2.js"></script>
+<d-front-matter>
+  <script type="text/json">{
+    "title": "{{ page.title }}",
+    "description": "{{ page.description }}",
+    "authors": [
+      {% for author in page.authors %}
+      {
+        "author": "{{ author.name }}",
+        "authorURL": "{{ author.url }}",
+        "affiliation": "{{ author.affil }}",
+        "affiliationURL": "{{ author.affil_url }}"
+      }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ],
+    "katex": {
+      "delimiters" : [
+        {"left": "$", "right": "$", "display": false}
+      ]
+    }
+  }</script>
+
+</d-front-matter>
+<d-title>
+  <h1>{{ page.title }}</h1>
+</d-title>
+<d-byline></d-byline>
+<d-article>
+  <h2>Section Headline</h2>
