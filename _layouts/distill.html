@@ -1,6 +1,9 @@
 <!doctype html>
 <meta charset="utf-8">
-<script src="https://distill.pub/template.v2.js"></script>
+<head>
+  <script src="https://distill.pub/template.v2.js"></script>
+  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+</head>
 <d-front-matter>
   <script type="text/json">{
     "title": "{{ page.title }}",
@@ -23,6 +26,7 @@
   }</script>
 
 </d-front-matter>
+{%- include header.html -%}
 <d-title>
   <h1>{{ page.title }}</h1>
 </d-title>
