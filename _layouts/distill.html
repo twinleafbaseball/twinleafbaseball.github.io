@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <head>
   <script src="https://distill.pub/template.v2.js"></script>
-  <link rel="stylesheet" href="{{ "/assets/main.css" | relative_url }}">
+  <link rel="stylesheet" href="{{ "/assets/css/style.css" | relative_url }}">
 </head>
 <d-front-matter>
   <script type="text/json">{
@@ -27,6 +27,11 @@
 
 </d-front-matter>
 {%- include header.html -%}
+{% if page.thumbnail%}
+  <figure class="l-screen">
+  <img src={{ page.thumbnail | relative_url }}>
+  </figure>
+{% endif %}
 <d-title>
   <h1>{{ page.title }}</h1>
 </d-title>
@@ -34,3 +39,8 @@
 <d-article>
   <!-- <h2>Section Headline</h2> -->
   {{ content }}
+</d-article>
+
+<d-appendix>
+  <d-bibliography></d-bibliography>
+</d-appendix>
